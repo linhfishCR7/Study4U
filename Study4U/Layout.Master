@@ -1,0 +1,483 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="Study4U.Layout" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Study4u - Chấp cánh ước mơ</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/img/icohat.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Content/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/Content/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/Content/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/Content/css/themify-icons.css" />
+    <link rel="stylesheet" href="/Content/css/nice-select.css" />
+    <link rel="stylesheet" href="/Content/css/flaticon.css" />
+    <link rel="stylesheet" href="/Content/css/gijgo.css" />
+    <link rel="stylesheet" href="/Content/css/animate.css" />
+    <link rel="stylesheet" href="/Content/css/slick.css" />
+    <link rel="stylesheet" href="/Content/css/slicknav.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+
+    <link rel="stylesheet" href="/Content/css/style.css" />
+    <!-- <link rel="stylesheet" href="/Content/css/responsive.css"> -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="index">
+                                        <img src="/Content/img/STUDY4U.jpg" alt="" class="logostudy4u">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" href="Default">Home</a></li>
+                                            <li><a href="About">About</a></li>
+                                            <li><a class="" href="University">University</a></li>
+                                            <!-- <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                        <li><a href="destination_details">Destinations details</a></li>
+                                                        <li><a href="elements">elements</a></li>
+                                                </ul>
+                                            </li> -->
+                                            <li><a href="Event">Event</a>
+                                                <!-- <ul class="submenu">
+                                                    <li><a href="blog">blog</a></li>
+                                                    <li><a href="single-blog">single-blog</a></li>
+                                                </ul> -->
+                                            </li>
+                                            <li><a href="memory">Góc kĩ niệm</a></li>
+                                            <li><a href="Contact">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                                <div class="social_wrap d-flex align-items-center justify-content-end">
+                                    <div class="number">
+                                        <p><i class="fa fa-phone"></i>090 863 7988</p>
+                                    </div>
+                                    <div class="social_links d-none d-xl-block">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="https://www.facebook.com/duhocstuy4u"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="seach_icon">
+                                <a data-toggle="modal" data-target="#exampleModalCenter" href="#">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- logo of school -->
+
+    <div class="testimonial_area ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+
+                    <div class="testmonial_active owl-carousel ">
+                        
+                        <asp:Panel ID="Panel1" runat="server">
+                            <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID_Logo">
+                                <EmptyDataTemplate>
+                                    <span>No data was returned.</span>
+                                </EmptyDataTemplate>
+                                <ItemTemplate>
+                        <div class="single_carousel ">
+                            <div class="row justify-content-center ">
+                                <div class="col-lg-12 ">
+                                    <div class="row justify-content-center ">
+
+                                        <div class="col-lg-3 ">
+
+                                            <div class="single_testmonial  text-center">
+                                                <div >
+                                                    <asp:Image ID="Image1" CssClass="logoSchool" runat="server" ImageUrl='<%# Bind("HinhAnhlogo") %>' />
+<%--                                                    <img src="/Content/img/SchoolLogo/119781.jpg" alt="" class="logoSchool" >--%>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+<%--                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/0_r8BR-G.jpg" alt="" class="logoSchool" >
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/151659238692.jpg" alt="" class="logoSchool">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/blanchet_catholic_logo.jpg" alt="" class="logoSchool">
+                                                </div>
+
+                                            </div>
+                                        </div>--%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    </ItemTemplate>
+                                <LayoutTemplate>
+                                    <div id="itemPlaceholderContainer" runat="server" style="">
+                                        <span runat="server" id="itemPlaceholder" />
+                                    </div>
+                                    <div style="">
+                                    </div>
+                                </LayoutTemplate>
+                            </asp:ListView>
+                        </asp:Panel>
+<%--                        <div class="single_carousel ">
+                            <div class="row justify-content-center ">
+                                <div class="col-lg-12 ">
+                                    <div class="row justify-content-center  ">
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/207.jpg" alt="" class="logoSchool" >
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/300x300.jpg" alt="" class="logoSchool" >
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/40155.jpg" alt="" class="logoSchool" >
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/aum.png" alt="" class="logoSchool" >
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-12">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/4e05cc2b9908bd326657f917f5c8d849_400x400.png" alt="" class="logoSchool">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/635619645658797500.jpg" alt="" class="logoSchool">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/7264056.gif" alt="" class="logoSchool">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                            <div class="single_testmonial text-center">
+                                                <div>
+                                                    <img src="/Content/img/SchoolLogo/Boca-Newspaper-FAU-Logo.jpg" alt="" class="logoSchool">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>--%>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
+        SelectCommand="SELECT TOP 3 * FROM [tbl09_Logo]"></asp:SqlDataSource>
+    <!-- /logo of school -->
+
+
+
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="/Content/img/STUDY4U.jpg" alt="" class="logostudy4u">
+                                </a>
+                            </div>
+                            <p>
+                                KDC 148, 3/2 Hưng Lợi
+                                <br>
+                                Ninh Kiều, Cần Thơ
+                                <br>
+                                <a href="#">+84 67 826 2567</a>
+                                <br>
+                                <a href="#">vanlinh@gmail.com</a>
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Company
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">List of Country
+                            </h3>
+                            <ul class="links double_links">
+                                <li><a href="#">Indonesia</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">India</a></li>
+                                <li><a href="#">Switzerland</a></li>
+                                <li><a href="#">Italy</a></li>
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">Franch</a></li>
+                                <li><a href="#">England</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Instagram
+                            </h3>
+                            <div class="instagram_feed">
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="/Content/img/instagram/image_1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="/Content/img/instagram/image_2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="/Content/img/instagram/image_3.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="/Content/img/instagram/image_4.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="/Content/img/instagram/image_5.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="single_insta">
+                                    <a href="#">
+                                        <img src="/Content/img/instagram/image_6.jpg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                           
+                            <script>document.write(new Date().getFullYear());</script>
+                            All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i>by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Modal -->
+    <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="serch_form">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- link that opens popup -->
+    <!--     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script> -->
+    <!-- js here -->
+    <script src="/Content/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="/Content/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/Content/js/popper.min.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+    <script src="/Content/js/owl.carousel.min.js"></script>
+    <script src="/Content/js/isotope.pkgd.min.js"></script>
+    <script src="/Content/js/ajax-form.js"></script>
+    <script src="/Content/js/waypoints.min.js"></script>
+    <script src="/Content/js/jquery.counterup.min.js"></script>
+    <script src="/Content/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/Content/js/scrollIt.js"></script>
+    <script src="/Content/js/jquery.scrollUp.min.js"></script>
+    <script src="/Content/js/wow.min.js"></script>
+    <script src="/Content/js/nice-select.min.js"></script>
+    <script src="/Content/js/jquery.slicknav.min.js"></script>
+    <script src="/Content/js/jquery.magnific-popup.min.js"></script>
+    <script src="/Content/js/plugins.js"></script>
+    <script src="/Content/js/gijgo.min.js"></script>
+    <script src="/Content/js/slick.min.js"></script>
+
+
+
+    <!--contact js-->
+    <script src="/Content/js/contact.js"></script>
+    <script src="/Content/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/Content/js/jquery.form.js"></script>
+    <script src="/Content/js/jquery.validate.min.js"></script>
+    <script src="/Content/js/mail-script.js"></script>
+
+    <script src="/Content/js/main.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+        });
+    </script>
+</body>
+</html>
