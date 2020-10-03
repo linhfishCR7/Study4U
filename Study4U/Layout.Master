@@ -29,11 +29,18 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
 
     <link rel="stylesheet" href="/Content/css/style.css" />
+
+    <link href="/Content/add/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/add/css/style.css" rel="stylesheet" />
+    <script src="/Content/add/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="/Content/add/js/bootstrap.min.js"></script>
+
     <!-- <link rel="stylesheet" href="/Content/css/responsive.css"> -->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
     <!-- header-start -->
     <header>
         <div class="header-area ">
@@ -109,176 +116,43 @@
 
     <!-- logo of school -->
 
-    <div class="testimonial_area ">
+    <div class="testimonial_area">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
+            <div class="testmonial_active owl-carousel">
 
-                    <div class="testmonial_active owl-carousel ">
-                        
-                        <asp:Panel ID="Panel1" runat="server">
-                            <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID_Logo">
+                <div class="single_carousel">
+
+                    <div class="row justify-content-center ">
+
+                        <asp:Panel ID="Panel2" runat="server">
+                            <asp:ListView ID="ListView2" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID_Logo">
                                 <EmptyDataTemplate>
                                     <span>No data was returned.</span>
                                 </EmptyDataTemplate>
                                 <ItemTemplate>
-                        <div class="single_carousel ">
-                            <div class="row justify-content-center ">
-                                <div class="col-lg-12 ">
-                                    <div class="row justify-content-center ">
-
-                                        <div class="col-lg-3 ">
-
-                                            <div class="single_testmonial  text-center">
-                                                <div >
-                                                    <asp:Image ID="Image1" CssClass="logoSchool" runat="server" ImageUrl='<%# Bind("HinhAnhlogo") %>' />
-<%--                                                    <img src="/Content/img/SchoolLogo/119781.jpg" alt="" class="logoSchool" >--%>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-<%--                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/0_r8BR-G.jpg" alt="" class="logoSchool" >
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/151659238692.jpg" alt="" class="logoSchool">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/blanchet_catholic_logo.jpg" alt="" class="logoSchool">
-                                                </div>
-
-                                            </div>
-                                        </div>--%>
+                                    <div class="col-lg-3 img-responsive">
+                                        <asp:Image ID="Image1" CssClass="logoSchool" runat="server" ImageUrl='<%# Bind("HinhAnhlogo") %>' style="width:180px; height:100px;padding-left:10px; padding-bottom:20px;" />
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                                    </ItemTemplate>
+                                </ItemTemplate>
                                 <LayoutTemplate>
                                     <div id="itemPlaceholderContainer" runat="server" style="">
                                         <span runat="server" id="itemPlaceholder" />
                                     </div>
-                                    <div style="">
-                                    </div>
                                 </LayoutTemplate>
                             </asp:ListView>
                         </asp:Panel>
-<%--                        <div class="single_carousel ">
-                            <div class="row justify-content-center ">
-                                <div class="col-lg-12 ">
-                                    <div class="row justify-content-center  ">
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/207.jpg" alt="" class="logoSchool" >
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/300x300.jpg" alt="" class="logoSchool" >
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/40155.jpg" alt="" class="logoSchool" >
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/aum.png" alt="" class="logoSchool" >
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/4e05cc2b9908bd326657f917f5c8d849_400x400.png" alt="" class="logoSchool">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/635619645658797500.jpg" alt="" class="logoSchool">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/7264056.gif" alt="" class="logoSchool">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-
-                                            <div class="single_testmonial text-center">
-                                                <div>
-                                                    <img src="/Content/img/SchoolLogo/Boca-Newspaper-FAU-Logo.jpg" alt="" class="logoSchool">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>--%>
-
                     </div>
                 </div>
+
             </div>
         </div>
+
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
-        SelectCommand="SELECT TOP 3 * FROM [tbl09_Logo]"></asp:SqlDataSource>
+        SelectCommand="SELECT TOP 4 * FROM [tbl09_Logo]"></asp:SqlDataSource>
     <!-- /logo of school -->
 
-
-
+    <!--footer-->
     <footer class="footer">
         <div class="footer_top">
             <div class="container">
@@ -410,9 +284,8 @@
                             Copyright &copy;
                            
                             <script>document.write(new Date().getFullYear());</script>
-                            All rights reserved | This
-                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i>by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            by <a
+                                href="https://linhfishcr7.wordpress.com/abouts-me/" target="_blank">LINH HA</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>

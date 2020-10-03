@@ -83,7 +83,7 @@
         </div>
     </div>
 
-    <div class="video_area video_bg overlay">
+    <%--<div class="video_area video_bg overlay">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -98,10 +98,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
 
 
-    <div class="travel_variation_area">
+<%--    <div class="travel_variation_area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -133,11 +133,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
 
 
     <!-- testimonial_area  -->
-    <div class="testimonial_area">
+    <%--<div class="testimonial_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -196,7 +196,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
     <!-- /testimonial_area  -->
 
 

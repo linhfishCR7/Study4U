@@ -2809,7 +2809,7 @@ h3 {
 
 /* line 80, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_destination.scss */
 .destination_banner_wrap {
-  background-image: url(../img/banner/Oxfore.jpg);
+  /*background-image: url(../img/banner/Oxfore.jpg);*/
   padding: 340px 0;
   background-size: cover;
   background-position: center center;
@@ -6697,4 +6697,16 @@ h6 {
 .logostudy4u{
   width: 100px;
   height: 70px;
+}
+
+.troinoi {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
 }

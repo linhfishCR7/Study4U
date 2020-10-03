@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-        <div class="destination_banner_wrap overlay">
+        <div class="destination_banner_wrap overlay" style="background-image: url(/Content/img/banner/Oxfore.jpg)">
         <div class="destination_text text-center">
             <h3>Oxfore University</h3>
             <p>Pixel perfect design with awesome contents</p>
@@ -11,14 +11,29 @@
 
     <div class="destination_details_info">
         <div class="container">
+             <asp:Panel ID="Panel1" runat="server">
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID_CTCT">
+                    <EmptyDataTemplate>
+                        <span>No data was returned.</span>
+                    </EmptyDataTemplate>
+                    <ItemTemplate>
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-9">
                     <div class="destination_info">
-                        <h3>Description</h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                        <p>Variations of passages of lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                        <h3>MÔ TẢ</h3>
+                        <p>
+                            <%# Eval("MoTa") %>
+                        </p>
                         
-                        <div class="video_area video_bg overlay">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 text-center">
+                                <asp:Image ID="Image1" runat="server" CssClass="img-fluid" ImageUrl='<%# Bind("HinhAnh") %>' />
+                            </div>
+                        </div>
+                        <br />
+                        <br></br>
+
+                     <%--   <div class="video_area video_bg overlay">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -34,15 +49,13 @@
                                 </div>
                             </div>
                         </div>
+                        <br>--%>
+                        <br>
                     </br>
                         <div class="single_destination">
-                            <h3>Content</h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.
-                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.
-                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.
-                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.
-                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.
-                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.
+                            <h3>NỘI DUNG</h3>
+                            <p>
+                                <%# Eval("NoiDung") %>
                             </p>
                         </div>
 
@@ -77,9 +90,24 @@
                     </div>
                 </div>
             </div>
+ </ItemTemplate>
+                    <LayoutTemplate>
+                        <div id="itemPlaceholderContainer" runat="server" style="">
+                            <span runat="server" id="itemPlaceholder" />
+                        </div>
+                        <div style="">
+                        </div>
+                    </LayoutTemplate>
+                </asp:ListView>
+            </asp:Panel>
         </div>
     </div>
-
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
+                SelectCommand="SELECT * FROM [tbl03_ChiTietChuongTrinh] WHERE ([ID_CT] = @ID_CT)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="ID_CT" SessionField="ID_CT" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
     <!-- newletter_area_start  -->
     <div class="newletter_area overlay">
         <div class="container">
@@ -115,96 +143,54 @@
         </div>
     </div>
     <!-- newletter_area_end  -->
+                <form runat="server">
 
-    <div class="popular_places_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb_70">
-                        <h3>More Universities</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_place">
-                        <div class="thumb">
-                            <img src="/Content/img/place/cambridge.jpg" alt="">
-                            <!-- <a href="#" class="prise">$500</a> -->
+<div class="popular_places_area">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single_place text-center">
+                            <h1>TRƯỜNG PHỔ BIẾN</h1>
                         </div>
-                        <div class="place_info">
-                            <a href="#"><h3>Cambridge</h3></a>
-                            <p>United State of America</p>
-                            <!-- <div class="rating_days d-flex justify-content-between">
-                                <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i>
-                                     <a href="#">(20 Review)</a>
-                                </span>
-                                <div class="days">
-                                    <i class="fa fa-clock-o"></i>
-                                    <a href="#">5 Days</a>
+                    </div>
+                    <asp:Panel ID="Panel2" runat="server">
+                        <asp:ListView ID="ListView" runat="server" DataSourceID="SqlDataSource2" DataKeyNames="ID_Truong" OnItemCommand="ListView_ItemCommand">
+                            <EmptyDataTemplate>
+                                <span>No data was returned.</span>
+                            </EmptyDataTemplate>
+                            <ItemTemplate>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="single_place">
+                                        <div class="thumb">
+                                            <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                        </div>
+                                        <div class="place_info">
+                                            <a href="#">
+                                                <h3><%# Eval("TenTruong") %></h3>
+                                            </a>
+                                            <p><%# Eval("MoTa") %></p>
+                                              <p>
+                                                <asp:Button ID="SelectButton1" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select1" />
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_place">
-                        <div class="thumb">
-                            <img src="/Content/img/place/harvard.jpg" alt="">
-                            <!-- <a href="#" class="prise">$500</a> -->
-                        </div>
-                        <div class="place_info">
-                            <a href="#"><h3>Harvard</h3></a>
-                            <p>United State of America</p>
-                            <!-- <div class="rating_days d-flex justify-content-between">
-                                <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i>
-                                     <a href="#">(20 Review)</a>
-                                </span>
-                                <div class="days">
-                                    <i class="fa fa-clock-o"></i>
-                                    <a href="#">5 Days</a>
+                            </ItemTemplate>
+                            <LayoutTemplate>
+                                <div id="itemPlaceholderContainer" runat="server" style="">
+                                    <span runat="server" id="itemPlaceholder" />
                                 </div>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_place">
-                        <div class="thumb">
-                            <img src="/Content/img/place/stanford.jpg" alt="">
-                            <!-- <a href="#" class="prise">$500</a> -->
-                        </div>
-                        <div class="place_info">
-                            <a href="#"><h3>Stanford</h3></a>
-                            <p>United State of America</p>
-                            <!-- <div class="rating_days d-flex justify-content-between">
-                                <span class="d-flex justify-content-center align-items-center">
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i> 
-                                     <i class="fa fa-star"></i>
-                                     <a href="#">(20 Review)</a>
-                                </span>
-                                <div class="days">
-                                    <i class="fa fa-clock-o"></i>
-                                    <a href="#">5 Days</a>
+                                <div style="">
                                 </div>
-                            </div> -->
-                        </div>
-                    </div>
+                            </LayoutTemplate>
+                        </asp:ListView>
+                    </asp:Panel>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
+                        SelectCommand="SELECT TOP 3* FROM [tbl04_TruongHoc]"></asp:SqlDataSource>
                 </div>
+
             </div>
         </div>
-    </div>
-</asp:Content>
+                    </form>
+                    </asp:Content>

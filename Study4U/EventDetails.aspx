@@ -19,36 +19,37 @@
     <!--/ bradcam_area  -->
 
     <!--================Blog Area =================-->
+                                <form runat="server">
+
     <section class="blog_area single-post-area section-padding">
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-4">
+                                <div class="col-lg-4">
                     <div class="blog_right_sidebar">
-                        
+
 
 
 
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Recent Post</h3>
                             <asp:Panel ID="Panel2" runat="server">
-                                <asp:ListView ID="ListView2" runat="server" DataSourceID="SqlDataSource2" DataKeyNames="ID_Event">
+                                <asp:ListView ID="ListView2" runat="server" DataSourceID="SqlDataSource2" DataKeyNames="ID_Event" OnItemCommand="ListView2_ItemCommand">
                                     <EmptyDataTemplate>
                                         <span>No data was returned.</span>
                                     </EmptyDataTemplate>
                                     <ItemTemplate>
                                         <div class="media post_item">
                                             <a href="/LoginSystem">
-                                                <asp:Image ID="Image2" runat="server" style="width:80px;height:80px;" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                                <asp:Image ID="Image2" runat="server" Style="width: 80px; height: 80px;" ImageUrl='<%# Bind("HinhAnh") %>' />
 
                                             </a>
                                             <div class="media-body">
-                                                <a href="single-blog.html">
                                                     <h3>
-                                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                        <asp:Label ID="lblChuDe" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                        <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select" />
                                                     </h3>
-                                                </a>
-                                                <p> <%#Eval("NgayDang","{0:MMM dd, yyyy}")%>  </p>
+                                                <p><%#Eval("NgayDang","{0:MMM dd, yyyy}")%>  </p>
                                             </div>
                                         </div>
                                     </ItemTemplate>
@@ -63,10 +64,10 @@
                             </asp:Panel>
                         </aside>
 
-                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
                             SelectCommand="SELECT TOP (4) ID_Event, ChuDe, HinhAnh, NgayDang FROM tbl06_Event ORDER BY ID_User DESC, NgayBatDau DESC, NgayKetThuc DESC"></asp:SqlDataSource>
 
-                        <aside class="single_sidebar_widget newsletter_widget">
+                    <%--    <aside class="single_sidebar_widget newsletter_widget">
                             <h4 class="widget_title">Newsletter</h4>
 
                             <form action="#">
@@ -78,9 +79,10 @@
                                     type="submit">
                                     Subscribe</button>
                             </form>
-                        </aside>
+                        </aside>--%>
                     </div>
                 </div>
+
 
 
                 <div class="col-lg-8 posts-list">
@@ -140,6 +142,7 @@
                     SelectCommand="SELECT tbl06_Event.ID_Event, tbl06_Event.ChuDe, tbl06_Event.MoTa, tbl06_Event.NoiDung, tbl06_Event.NgayBatDau, tbl06_Event.NgayKetThuc, tbl06_Event.HinhAnh, tbl06_Event.ID_User, tbl05_User.TenUser, tbl06_Event.NgayDang FROM tbl06_Event INNER JOIN tbl05_User ON tbl06_Event.ID_User = tbl05_User.ID_User WHERE (tbl06_Event.ID_Event = @ID_Event) ORDER BY tbl06_Event.ID_Event DESC">
                     <SelectParameters>
                         <asp:SessionParameter Name="ID_Event" SessionField="ID_Event" Type="Int32" />
+
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
@@ -147,5 +150,5 @@
         </div>
     </section>
     <!--================ Blog Area end =================-->
-
+</form>
 </asp:Content>

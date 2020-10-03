@@ -20,14 +20,20 @@
 
 
     <!--================Blog Area =================-->
+                            <form runat="server">
+
     <section class="blog_area section-padding">
         <div class="container">
             <div class="row">
+                 <div class="col-lg-12 col-md-12">
+                        <div class="blog_item text-center">
+                            <h1>Danh sách các sự kiện</h1>
+                        </div>
+                    </div>
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
 
 
-                        <form runat="server">
                             <asp:Panel ID="Panel1" runat="server">
                                 <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID_Event" OnItemCommand="ListView1_ItemCommand">
                                     <EmptyDataTemplate>
@@ -53,11 +59,13 @@
                                             <div class="blog_details">
                                                 <a class="d-inline-block" href="#">
                                                     <h2>
-                                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                        <asp:Label ID="lblChuDe" runat="server" Text='<%# Eval("ChuDe") %>' />
                                                     </h2>
                                                 </a>
                                                 <p>
                                                     <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>' />
+                                                </p>
+                                                <p>
                                                     <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select" />
                                                 </p>
                                             </div>
@@ -76,7 +84,6 @@
 
 
                             </asp:Panel>
-                        </form>
 
 
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
@@ -117,7 +124,7 @@
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Recent Post</h3>
                             <asp:Panel ID="Panel2" runat="server">
-                                <asp:ListView ID="ListView2" runat="server" DataSourceID="SqlDataSource2" DataKeyNames="ID_Event">
+                                <asp:ListView ID="ListView2" runat="server" DataSourceID="SqlDataSource2" DataKeyNames="ID_Event" OnItemCommand="ListView2_ItemCommand">
                                     <EmptyDataTemplate>
                                         <span>No data was returned.</span>
                                     </EmptyDataTemplate>
@@ -128,12 +135,11 @@
 
                                             </a>
                                             <div class="media-body">
-                                                <a href="single-blog.html">
                                                     <h3>
-                                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                        <asp:Label ID="lblChuDe" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                        <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select" />
                                                     </h3>
-                                                </a>
-                                                <p> <%#Eval("NgayDang","{0:MMM dd, yyyy}")%>  </p>
+                                                <p><%#Eval("NgayDang","{0:MMM dd, yyyy}")%>  </p>
                                             </div>
                                         </div>
                                     </ItemTemplate>
@@ -151,7 +157,7 @@
                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
                             SelectCommand="SELECT TOP (4) ID_Event, ChuDe, HinhAnh, NgayDang FROM tbl06_Event ORDER BY ID_User DESC, NgayBatDau DESC, NgayKetThuc DESC"></asp:SqlDataSource>
 
-                        <aside class="single_sidebar_widget newsletter_widget">
+                    <%--    <aside class="single_sidebar_widget newsletter_widget">
                             <h4 class="widget_title">Newsletter</h4>
 
                             <form action="#">
@@ -163,7 +169,7 @@
                                     type="submit">
                                     Subscribe</button>
                             </form>
-                        </aside>
+                        </aside>--%>
                     </div>
                 </div>
 
@@ -171,5 +177,6 @@
         </div>
     </section>
     <!--================Blog Area =================-->
+                        </form>
 
 </asp:Content>

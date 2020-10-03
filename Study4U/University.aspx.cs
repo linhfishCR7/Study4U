@@ -13,18 +13,17 @@ namespace Study4U
         {
 
         }
-        protected void ListView1_ItemCommand(object sender, ListViewCommandEventArgs e)
+        protected void ListView_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-            if (String.Equals(e.CommandName, "Select"))
+            if (String.Equals(e.CommandName, "Select1"))
             {
                 ListViewDataItem dataItem = (ListViewDataItem)e.Item;
-                string ID_Event = ListView1.DataKeys[dataItem.DisplayIndex].Value.ToString();
-                Session["ID_Event"] = ID_Event;
-                Response.Redirect("/EventDetails.aspx");
-
-
+                string ID_Truong = ListView.DataKeys[dataItem.DisplayIndex].Value.ToString();
+                Session["ID_Truong"] = ID_Truong;
+                Response.Redirect("/ChiTietTruong.aspx");
 
             }
         }
+        
     }
 }
