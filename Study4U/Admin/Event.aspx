@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/LayoutAdmin.Master" AutoEventWireup="true" CodeBehind="Event.aspx.cs" Inherits="Study4U.Admin.Event" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
-<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
+<%@ Register Namespace="CKEditor.NET" Assembly="CKEditor.NET" TagPrefix="CKEditor" %> 
 <%@ Register Namespace="CKFinder" Assembly="CKFinder" TagPrefix="CKFinder" %>
-
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="head">
     <style type="text/css">
     </style>
+ 
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -27,7 +27,7 @@
                         </table>
                         <asp:GridView ID="GridView1" runat="server" Width="100%" HorizontalAlign="Center" OnRowCommand="GridView1_RowCommand"
                             AutoGenerateColumns="False"
-                            DataKeyNames="ID_Event" CssClass="table table-striped table-hover table-bordered dt-responsive nowrap" Style="border-collapse: collapse; border-spacing: 0; width: 100%;" DataSourceID="SqlDataSource1">
+                            DataKeyNames="ID_Event" CssClass="table table-striped table-responsive table-hover table-bordered dt-responsive nowrap" Style="border-collapse: collapse; border-spacing: 0; width: 100%;" DataSourceID="SqlDataSource1">
                             <Columns>
                                 <asp:ButtonField CommandName="editRecord" HeaderText="Edit" ButtonType="Link" Text='<i class="typcn typcn-edit"></i>' ItemStyle-Width="40px">
                                     <ControlStyle CssClass="btn btn-xs mauvang"></ControlStyle>
@@ -95,14 +95,14 @@
                                         <td>Content: (*)</td>
                                         <td>
                                             <CKEditor:CKEditorControl ID="txtNoiDung" Height="100" runat="server"></CKEditor:CKEditorControl>
-                                            <%--<asp:TextBox ID="txtNoiDung" runat="server" CssClass="form-control"></asp:TextBox>--%>
+<%--                                            <asp:TextBox ID="txtNoiDung" runat="server" CssClass="form-control"></asp:TextBox>--%>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Post-Date: (*)</td>
                                         <td>
                                             <asp:TextBox ID="txtNgayDang" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayDang_CalendarExtender" TargetControlID="txtNgayDang" ID="txtNgayDang_CalendarExtender" Format="dd/MM/yyyy"></ajaxToolkit:CalendarExtender>
+                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayDang_CalendarExtender" TargetControlID="txtNgayDang" ID="txtNgayDang_CalendarExtender" Format="MM/dd/yyyy"></ajaxToolkit:CalendarExtender>
 
                                         </td>
                                     </tr>
@@ -110,7 +110,7 @@
                                         <td>Start-Date: (*)</td>
                                         <td>
                                             <asp:TextBox ID="txtNgayBatDau" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayBatDau_CalendarExtender" TargetControlID="txtNgayBatDau" ID="txtNgayBatDau_CalendarExtender" Format="dd/MM/yyyy"></ajaxToolkit:CalendarExtender>
+                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayBatDau_CalendarExtender" TargetControlID="txtNgayBatDau" ID="txtNgayBatDau_CalendarExtender" Format="MM/dd/yyyy"></ajaxToolkit:CalendarExtender>
 
                                         </td>
                                     </tr>
@@ -118,7 +118,7 @@
                                         <td>End-Date: (*)</td>
                                         <td>
                                             <asp:TextBox ID="txtNgayKetThuc" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayKetThuc_CalendarExtender" TargetControlID="txtNgayKetThuc" ID="txtNgayKetThuc_CalendarExtender" Format="dd/MM/yyyy"></ajaxToolkit:CalendarExtender>
+                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayKetThuc_CalendarExtender" TargetControlID="txtNgayKetThuc" ID="txtNgayKetThuc_CalendarExtender" Format="MM/dd/yyyy"></ajaxToolkit:CalendarExtender>
 
                                         </td>
                                     </tr>
@@ -196,14 +196,14 @@
                                         <td>Content: (*)</td>
                                         <td>
                                             <CKEditor:CKEditorControl ID="txtNoiDung1" Height="100" runat="server"></CKEditor:CKEditorControl>
-                                            <%--<asp:TextBox ID="txtNoiDung1" runat="server" CssClass="form-control"></asp:TextBox>--%>
+<%--                                            <asp:TextBox ID="txtNoiDung1" runat="server" CssClass="form-control"></asp:TextBox>--%>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Post-Date: (*)</td>
                                         <td>
                                             <asp:TextBox ID="txtNgayDang1" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayDang1_CalendarExtender" TargetControlID="txtNgayDang1" ID="txtNgayDang1_CalendarExtender" Format="dd/MM/yyyy"></ajaxToolkit:CalendarExtender>
+                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayDang1_CalendarExtender" TargetControlID="txtNgayDang1" ID="txtNgayDang1_CalendarExtender" Format="MM/dd/yyyy"></ajaxToolkit:CalendarExtender>
 
                                         </td>
                                     </tr>
@@ -211,7 +211,7 @@
                                         <td>Start-Date: (*)</td>
                                         <td>
                                             <asp:TextBox ID="txtNgayBatDau1" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayBatDau1_CalendarExtender" TargetControlID="txtNgayBatDau1" ID="txtNgayBatDau1_CalendarExtender" Format="dd/MM/yyyy"></ajaxToolkit:CalendarExtender>
+                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayBatDau1_CalendarExtender" TargetControlID="txtNgayBatDau1" ID="txtNgayBatDau1_CalendarExtender" Format="MM/dd/yyyy"></ajaxToolkit:CalendarExtender>
 
                                         </td>
                                     </tr>
@@ -219,7 +219,7 @@
                                         <td>End-Date: (*)</td>
                                         <td>
                                             <asp:TextBox ID="txtNgayKetThuc1" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayKetThuc1_CalendarExtender" TargetControlID="txtNgayKetThuc1" ID="txtNgayKetThuc1_CalendarExtender" Format="dd/MM/yyyy"></ajaxToolkit:CalendarExtender>
+                                            <ajaxToolkit:CalendarExtender runat="server" BehaviorID="txtNgayKetThuc1_CalendarExtender" TargetControlID="txtNgayKetThuc1" ID="txtNgayKetThuc1_CalendarExtender" Format="MM/dd/yyyy"></ajaxToolkit:CalendarExtender>
 
                                         </td>
                                     </tr>
@@ -325,8 +325,9 @@
             </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>" SelectCommand="SELECT * FROM [tbl05_User] ORDER BY [ID_User]"></asp:SqlDataSource>
         </div>
-        <CKFinder:FileBrowser ID="FileBrowser1" Width="0" runat="server" OnLoad="FileBrowser1_Load"></CKFinder:FileBrowser>
+        <CKFinder:FileBrowser ID="FileBrowser1"   Width="0" runat="server" OnLoad="FileBrowser1_Load"></CKFinder:FileBrowser>
         <CKFinder:FileBrowser ID="FileBrowser2" Width="0" runat="server" OnLoad="FileBrowser2_Load"></CKFinder:FileBrowser>
+
     </asp:Panel>
     <asp:Panel ID="panelThongBao" runat="server" Visible="False">
         <h4 class="alert alert-warning" role="alert">Sorry. You don't authorize to access this page. Please contact your admin.</h4>

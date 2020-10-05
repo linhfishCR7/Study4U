@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text text-center">
-                        <h3>Góc kĩ niệm</h3>
+                        <h3>GÓC KỶ NIỆM</h3>
                         <p>Pixel perfect design with awesome contents</p>
                     </div>
                 </div>
@@ -22,22 +22,22 @@
 
      <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-       
-              
-       
+   
+                    <div class="container" style="margin-top: 50px;">
+                        <div class="row justify-content-center">
+                            <div class="text-center">
+                                <h2 class="mb-4">BỘ ẢNH</h2>
 
-
-                    <div class="container" style="margin-top: 75px;">
-                        <div class="row">
+                            </div>
                             <asp:Panel ID="Panel1" runat="server">
                                 <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID_KiNiem">
                                     <EmptyDataTemplate>
                                         <span>No data was returned.</span>
                                     </EmptyDataTemplate>
                                     <ItemTemplate>
-                                        <div class="col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-md-4 col-sm-8 col-xs-12 ">
                                             <a href="<%# Eval("HinhAnhKiNiem") %>" class="img-pop-up img-responsive">
-                                                <img src="<%# Eval("HinhAnhKiNiem") %>" style="width:275px; height:150px; padding-left:5px; padding-bottom:5px;" />
+                                                <img src="<%# Eval("HinhAnhKiNiem") %>" class="img-responsive img-fluid img-thumbnail" style="height:250px;" />
 
                                             </a>
                                         </div>

@@ -24,7 +24,7 @@
                         </table>
                         <asp:GridView ID="GridView1" runat="server" Width="100%" HorizontalAlign="Center" OnRowCommand="GridView1_RowCommand"
                             AutoGenerateColumns="False"
-                            DataKeyNames="ID_Logo" CssClass="table table-striped table-hover table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;" DataSourceID="SqlDataSource1">
+                            DataKeyNames="ID_Logo" CssClass="table table-striped table-responsive table-hover table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;" DataSourceID="SqlDataSource1">
                             <Columns>
                                 <asp:ButtonField CommandName="editRecord" HeaderText="Edit" ButtonType="Link" Text='<i class="typcn typcn-edit"></i>' ItemStyle-Width="40px">
                                     <ControlStyle CssClass="btn btn-xs mauvang"></ControlStyle>

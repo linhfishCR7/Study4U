@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Study4U._Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Study4U._Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -13,76 +13,44 @@
 
 
         <!-- slider_area_start -->
-        <div class="slider_area">
-            <div class="slider_active owl-carousel">
-                <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-xl-12 col-md-12">
-                                <div class="slider_text text-center">
-                                    <h3></h3>
 
-                                    <a href="#" class="boxed-btn3">Explore Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single_slider  d-flex align-items-center slider_bg_2 overlay">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-xl-12 col-md-12">
-                                <div class="slider_text text-center">
-                                    <h3>Library</h3>
-                                    <p>Pixel perfect design with awesome contents</p>
-                                    <a href="#" class="boxed-btn3">Explore Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single_slider  d-flex align-items-center slider_bg_3 overlay">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-xl-12 col-md-12">
-                                <div class="slider_text text-center">
-                                    <h3>Princeton</h3>
-                                    <p>Pixel perfect design with awesome contents</p>
-                                    <a href="#" class="boxed-btn3">Explore Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single_slider  d-flex align-items-center slider_bg_4 overlay">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-xl-12 col-md-12">
-                                <div class="slider_text text-center">
-                                    <h3>Princeton</h3>
-                                    <p>Pixel perfect design with awesome contents</p>
-                                    <a href="#" class="boxed-btn3">Explore Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single_slider  d-flex align-items-center slider_bg_5 overlay">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-xl-12 col-md-12">
-                                <div class="slider_text text-center">
-                                    <h3>Princeton</h3>
-                                    <p>Pixel perfect design with awesome contents</p>
-                                    <a href="#" class="boxed-btn3">Explore Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
 
-        </div>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/Content/img/banner/girl.png" class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/Content/img/banner/library1.png" class="d-block w-100 "  alt="...">
+                        </div>
+                      
+                         <div class="carousel-item">
+                            <img src="/Content/img/banner/Cambridge1.png" class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/Content/img/banner/Oxfore1.png" class="d-block w-100 "  alt="...">
+                        </div>
+                         <div class="carousel-item">
+                            <img src="/Content/img/banner/Princeton1.png" class="d-block w-100 "  alt="...">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+ 
         <!-- slider_area_end -->
 
 
@@ -114,12 +82,13 @@
                                             <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("HinhAnhQG") %>' />
                                         </div>
                                         <div class="content">
+                                          
                                             <p class="d-flex align-items-center">
-                                                <p><%# Eval("TenQG") %></p>
-
-                                                <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="Chi Tiết..." CommandName="Select" />
+                                                <%# Eval("TenQG") %>
+                                                <asp:LinkButton ID="SelectButton" runat="server" CommandName="Select">
+                                                    CHI TIẾT...
+                                                </asp:LinkButton>
                                             </p>
-
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +110,7 @@
         <!-- popular_destination_area_end  -->
 
         <!-- newletter_area_start  -->
-        <div class="newletter_area overlay">
+        <%--        <div class="newletter_area overlay">
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-10">
@@ -175,7 +144,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- newletter_area_end  -->
 
         <div class="popular_places_area">
@@ -196,15 +165,22 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="single_place">
                                         <div class="thumb">
-                                            <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                            <asp:LinkButton ID="SelectButton111" runat="server" CommandName="Select">
+                                                   <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />                                              
+                                                    </asp:LinkButton>
+                                           
                                         </div>
                                         <div class="place_info">
-                                            <a href="destination_details.html">
-                                                <h3><%# Eval("TenTruong") %></h3>
+                                            <a>
+
+                                                <h3>
+                                                    <asp:LinkButton ID="SelectButton11" runat="server" CommandName="Select">
+                                                    <%# Eval("TenTruong") %>                                                
+                                                    </asp:LinkButton></h3>
                                             </a>
                                             <p><%# Eval("MoTa") %></p>
                                             <p>
-                                                <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select" />
+                                                <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxanh" Text="CHI TIẾT..." CommandName="Select" />
                                             </p>
                                         </div>
                                     </div>
@@ -225,7 +201,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="more_place_btn text-center">
-                            <a class="boxed-btn4" href="/University.aspx">More Places</a>
+                            <a class="boxed-btn4" href="/University.aspx">Xem Thêm</a>
                         </div>
                     </div>
                 </div>
@@ -374,7 +350,9 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="single_trip">
                                         <div class="thumb">
+                                            <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Select">
                                             <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                                    </asp:LinkButton>
                                         </div>
                                         <div class="info">
                                             <div class="date">
@@ -383,11 +361,11 @@
                                             </div>
                                             <a href="#">
                                                 <h3>
-                                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                       <asp:LinkButton ID="SelectButton11" runat="server" CommandName="Select">
+                                                    <%# Eval("ChuDe") %>                                                
+                                                    </asp:LinkButton>
                                                 </h3>
-                                                <p>
-                                                    <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select" />
-                                                </p>
+                                                
 
                                             </a>
                                         </div>

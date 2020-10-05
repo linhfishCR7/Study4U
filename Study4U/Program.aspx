@@ -3,13 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+                <form runat="server">
+
     <!-- bradcam_area  -->
     <div class="bradcam_area bradcam_bg_2">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text text-center">
-                        <h3>Destinations</h3>
+                        <h3>CHƯƠNG TRÌNH DU HỌC</h3>
                         <p>Pixel perfect design with awesome contents</p>
                     </div>
                 </div>
@@ -42,7 +44,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-lg-12 text-center">
-                                <asp:Image ID="Image1" runat="server" CssClass="img-fluid" ImageUrl='<%# Bind("HinhAnhMoTaQG") %>' />
+                                <asp:Image ID="Image1" runat="server" style="height:500px; width:100%;" CssClass="img-fluid" ImageUrl='<%# Bind("HinhAnhMoTaQG") %>' />
                             </div>
                         </div>
                         <br />
@@ -74,11 +76,10 @@
 
                             <div class="col-lg-8">
                                 <div class="section_title text-center mb_70">
-                                    <h3>CHƯƠNG TRÌNH DU HỌC                                         <%# Eval("TenQG") %>
+                                    <h3>
+                                        CHƯƠNG TRÌNH DU HỌC <%# Eval("TenQG") %>
                                     </h3>
                                     <p>
-                                        Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit
-                            hella wolf moon beard words.
                                     </p>
                                 </div>
                             </div>
@@ -94,7 +95,6 @@
                     </LayoutTemplate>
                 </asp:ListView>
             </asp:Panel>
-            <form runat="server">
 
                 <div class="row">
                     <asp:Panel ID="Panel2" runat="server">
@@ -106,17 +106,21 @@
                                 <div class="col-lg-6 col-md-6">
                                     <div class="single_place">
                                         <div class="thumb">
-                                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("HinhAnhCT") %>' />
+                                            <asp:LinkButton ID="SelectButton3" runat="server" CommandName="Select">
+                                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("HinhAnhCT") %>' />
+                                            </asp:LinkButton>
 
                                         </div>
                                         <div class="place_info">
                                             <a href="destination_details.html">
-                                                <h3><%# Eval("TenCT") %>
+                                                <h3>
+                                                     <asp:LinkButton ID="SelectButton2" runat="server" CommandName="Select">
+                                                        <asp:Label ID="lblTenCT" runat="server" Text='<%# Eval("TenCT") %>' /></asp:LinkButton>
                                                 </h3>
                                             </a>
-                                            <p>United State of America</p>
+                                            <p><i class="fa fa-flag"></i> QUỐC GIA <%# Eval("TenQG") %></p>
                                             <p>
-                                                <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="Chi Tiết..." CommandName="Select" />
+                                                <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxanh" Text="CHI TIẾT..." CommandName="Select" />
                                             </p>
                                         </div>
                                     </div>
@@ -132,13 +136,12 @@
                         </asp:ListView>
                     </asp:Panel>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
-                        SelectCommand="SELECT * FROM [tbl02_ChuongTrinh] WHERE ([ID_QG] = @ID_QG)">
+                        SelectCommand="SELECT tbl02_ChuongTrinh.ID_CT, tbl02_ChuongTrinh.TenCT, tbl02_ChuongTrinh.HinhAnhCT, tbl02_ChuongTrinh.ID_QG, tbl01_QuocGia.TenQG FROM tbl02_ChuongTrinh INNER JOIN tbl01_QuocGia ON tbl02_ChuongTrinh.ID_QG = tbl01_QuocGia.ID_QG WHERE (tbl02_ChuongTrinh.ID_QG = @ID_QG)">
                         <SelectParameters>
                             <asp:SessionParameter Name="ID_QG" SessionField="ID_QG" Type="Int32" />
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </div>
-            </form>
         </div>
     </div>
 
@@ -179,67 +182,62 @@
         </div>
     </div>
     <!-- newletter_area_end  -->
-    <div class="recent_trip_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb_70">
-                        <h3>Recent Events</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_trip">
-                        <div class="thumb">
-                            <img src="/Content/img/blog/bg_1.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="date">
-                                <span>Oct 12, 2019</span>
-                            </div>
-                            <a href="#">
-                                <h3>Journeys Are Best Measured In
-                                    New Friends</h3>
-                            </a>
+<div class="recent_trip_area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section_title text-center mb_70">
+                            <h3>Recent Events</h3>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_trip">
-                        <div class="thumb">
-                            <img src="/Content/img/blog/course-2.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="date">
-                                <span>Oct 12, 2019</span>
-                            </div>
-                            <a href="#">
-                                <h3>Journeys Are Best Measured In
-                                    New Friends</h3>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_trip">
-                        <div class="thumb">
-                            <img src="/Content/img/blog/bg_3.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="date">
-                                <span>Oct 12, 2019</span>
-                            </div>
-                            <a href="#">
-                                <h3>Journeys Are Best Measured In
-                                    New Friends</h3>
-                            </a>
-                        </div>
-                    </div>
+                <div class="row">
+
+                    <asp:Panel ID="Panel4" runat="server">
+                        <asp:ListView ID="ListView4" runat="server" DataSourceID="SqlDataSource3" DataKeyNames="ID_Event" OnItemCommand="ListView3_ItemCommand">
+                            <EmptyDataTemplate>
+                                <span>No data was returned.</span>
+                            </EmptyDataTemplate>
+                            <ItemTemplate>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="single_trip">
+                                        <div class="thumb">
+                                            <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                        </div>
+                                        <div class="info">
+                                            <div class="date">
+                                                <span><%#Eval("NgayDang","{0:MMM dd, yyyy}")%>  
+                                                </span>
+                                            </div>
+                                            <a href="#">
+                                                <h3>
+                                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                </h3>
+                                                <p>
+                                                    <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select" />
+                                                </p>
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                            <LayoutTemplate>
+                                <div id="itemPlaceholderContainer" runat="server" style="">
+                                    <span runat="server" id="itemPlaceholder" />
+                                </div>
+                                <div style="">
+                                </div>
+                            </LayoutTemplate>
+                        </asp:ListView>
+
+
+                    </asp:Panel>
+                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
+                        SelectCommand="SELECT TOP 3 * FROM [tbl06_Event] ORDER BY [ID_User] DESC"></asp:SqlDataSource>
                 </div>
             </div>
         </div>
-    </div>
-
+ </form>
 
 </asp:Content>

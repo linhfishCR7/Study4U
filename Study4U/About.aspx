@@ -9,12 +9,12 @@
 
 
     <!-- bradcam_area  -->
-    <div class="bradcam_area bradcam_bg_3">
+    <div class="bradcam_area bradcam_bg_3 ">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text text-center">
-                        <h3>About Us</h3>
+                        <h3>GIỚI THIỆU VỀ CÔNG TY</h3>
                         <p>Pixel perfect design with awesome contents</p>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="story_heading">
-                        <h3>Our Story</h3>
+                        <h3>GIỚI THIỆU</h3>
                     </div>
                     <div class="row">
                         <div class="col-lg-11 offset-lg-1">
@@ -200,7 +200,7 @@
     <!-- /testimonial_area  -->
 
 
-    <div class="recent_trip_area">
+    <%--<div class="recent_trip_area">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -260,7 +260,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
 
 
 </asp:Content>

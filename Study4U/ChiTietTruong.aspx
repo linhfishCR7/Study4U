@@ -9,7 +9,7 @@
                 <span>No data was returned.</span>
             </EmptyDataTemplate>
             <ItemTemplate>
-                <div class="destination_banner_wrap overlay" style="background-image: url('<%# Eval("HinhAnh") %>')">
+                <div class="destination_banner_wrap overlay" style="background-image: url('<%# Eval("HinhAnhBanner") %>')">
                     <div class="destination_text text-center">
 
                         <h3><%# Eval("TenTruong") %></h3>
@@ -41,7 +41,7 @@
                                     <h3>Description</h3>
                                     <p><%# Eval("Mota") %></p>
                                     <div>
-                                        <asp:Image ID="Image2" CssClass="" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                        <asp:Image ID="Image2" CssClass="img-fluid" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
                                     </div>
                                     <%--                                    <div class="video_area video_bg overlay">
                                         <div class="container">
@@ -117,7 +117,7 @@
         </SelectParameters>
     </asp:SqlDataSource>
     <!-- newletter_area_start  -->
-    <div class="newletter_area overlay">
+<%--    <div class="newletter_area overlay">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-10">
@@ -151,7 +151,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
     <!-- newletter_area_end  -->
         <form runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -181,7 +181,7 @@
                                             </a>
                                             <p><%# Eval("MoTa") %></p>
                                               <p>
-                                                <asp:Button ID="SelectButton1" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select1" />
+                                                <asp:Button ID="SelectButton1" runat="server" CssClass="btn btn-sm mauxanh" Text="View more..." CommandName="Select1" />
                                             </p>
                                         </div>
                                     </div>

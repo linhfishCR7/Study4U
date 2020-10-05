@@ -24,6 +24,19 @@ namespace Study4U
 
             }
         }
-        
+        protected void ListView1_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            if (String.Equals(e.CommandName, "Select"))
+            {
+                ListViewDataItem dataItem = (ListViewDataItem)e.Item;
+                string ID_Event = ListView1.DataKeys[dataItem.DisplayIndex].Value.ToString();
+                Session["ID_Event"] = ID_Event;
+                Response.Redirect("/EventDetails.aspx");
+
+
+
+            }
+        }
+
     }
 }

@@ -12,7 +12,10 @@ namespace Study4U.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Email"] == null)
+            {
+                Response.Redirect("../Admin/LoginAdmin");
+            }
         }
         //Add Modal
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -25,17 +28,20 @@ namespace Study4U.Admin
 
         }
 
-        
+
 
         protected void btnAddRecord_Click(object sender, EventArgs e)
         {
             if (IsValid)
             {
                 var parameters = SqlDataSource1.InsertParameters;
-                                                    //<% --([TenQG], [MoTa], [HinhAnhQG]) --%>
+                // ([TenQG], [MoTa], [HinhAnhQG], [HinhAnhMoTaQG])
+
                 parameters["TenQG"].DefaultValue = txtTenQG.Text;
                 parameters["MoTa"].DefaultValue = txtMoTa.Text;
                 parameters["HinhAnhQG"].DefaultValue = txtHinhAnhQG.Text;
+                parameters["HinhAnhMoTaQG"].DefaultValue = txtHinhAnhMoTaQG.Text;
+               
                 try
                 {
                     if (txtTenQG.Text == "")
@@ -46,6 +52,15 @@ namespace Study4U.Admin
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
                     }
+                    else if (txtHinhAnhQG.Text == "")
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
+                    }
+                    else if (txtHinhAnhMoTaQG.Text == "")
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
+                    }
+
 
                     else
                     {
@@ -53,6 +68,8 @@ namespace Study4U.Admin
                         txtTenQG.Text = "";
                         txtMoTa.Text = "";
                         txtHinhAnhQG.Text = "";
+                        txtHinhAnhMoTaQG.Text = "";
+                        
                         StringBuilder sb = new StringBuilder();
                         sb.Append(@"<script type='text/javascript'>");
                         sb.Append("alert('Record Added Successfully');");
@@ -77,9 +94,10 @@ namespace Study4U.Admin
             {
                 GridViewRow gvrow = GridView1.Rows[index];
                 txtID_QG1.Text = HttpUtility.HtmlDecode(gvrow.Cells[2].Text).ToString();
-                txtTenQG1.Text = HttpUtility.HtmlDecode(gvrow.Cells[3].Text).ToString();
-                txtMoTa1.Text = HttpUtility.HtmlDecode(gvrow.Cells[4].Text).ToString();
-                txtHinhAnhQG1.Text = HttpUtility.HtmlDecode(gvrow.Cells[5].Text).ToString();
+                txtTenQG1.Text = HttpUtility.HtmlDecode(gvrow.Cells[3].Text).ToString().Trim();
+                txtMoTa1.Text = HttpUtility.HtmlDecode(gvrow.Cells[4].Text).ToString().Trim();
+                txtHinhAnhQG1.Text = HttpUtility.HtmlDecode(gvrow.Cells[5].Text).ToString().Trim();
+                txtHinhAnhMoTaQG1.Text = HttpUtility.HtmlDecode(gvrow.Cells[6].Text).ToString().Trim();
 
                 lblResult.Visible = false;
                 StringBuilder sb = new StringBuilder();
@@ -107,11 +125,13 @@ namespace Study4U.Admin
             {
                 var parameters = SqlDataSource1.UpdateParameters;
 
-                //<% --([TenQG], [MoTa], [HinhAnhQG]) --%>
+                // ([TenQG], [MoTa], [HinhAnhQG], [HinhAnhMoTaQG])
                 parameters["ID_QG"].DefaultValue = txtID_QG1.Text;
                 parameters["TenQG"].DefaultValue = txtTenQG1.Text;
                 parameters["MoTa"].DefaultValue = txtMoTa1.Text;
                 parameters["HinhAnhQG"].DefaultValue = txtHinhAnhQG1.Text;
+                parameters["HinhAnhMoTaQG"].DefaultValue = txtHinhAnhMoTaQG1.Text;
+
                 try
                 {
                     if (txtTenQG1.Text == "")
@@ -119,6 +139,14 @@ namespace Study4U.Admin
                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
                     }
                     else if (txtMoTa1.Text == "")
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
+                    }
+                    else if (txtHinhAnhQG1.Text == "")
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
+                    }
+                    else if (txtHinhAnhMoTaQG1.Text == "")
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
                     }
@@ -174,6 +202,19 @@ namespace Study4U.Admin
             sb.Append("$('#deleteModal').modal('hide');");
             sb.Append(@"</script>");
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "delHideModalScript", sb.ToString(), false);
+        }
+        protected void FileBrowser1_Load(object sender, EventArgs e)
+        {
+            FileBrowser1 = new CKFinder.FileBrowser();
+            FileBrowser1.BasePath = "/ckfinder/";
+            FileBrowser1.SetupCKEditor(txtMoTa);
+        }
+
+        protected void FileBrowser2_Load(object sender, EventArgs e)
+        {
+            FileBrowser1 = new CKFinder.FileBrowser();
+            FileBrowser1.BasePath = "/ckfinder/";
+            FileBrowser1.SetupCKEditor(txtMoTa1);
         }
     }
 }

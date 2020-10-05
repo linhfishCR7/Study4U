@@ -40,15 +40,20 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="single_place">
                                         <div class="thumb">
-                                            <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                            <asp:LinkButton ID="SelectButton2" runat="server" CommandName="Select1">
+                                                <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                            </asp:LinkButton>
                                         </div>
                                         <div class="place_info">
                                             <a href="#">
-                                                <h3><%# Eval("TenTruong") %></h3>
+                                                <h3>
+                                                    <asp:LinkButton ID="SelectButton" runat="server" CommandName="Select1">
+                                                        <asp:Label ID="lblTenTruong" runat="server" Text='<%# Eval("TenTruong") %>' /></asp:LinkButton>
+                                                </h3>
                                             </a>
                                             <p><%# Eval("MoTa") %></p>
                                               <p>
-                                                <asp:Button ID="SelectButton1" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select1" />
+                                                <asp:Button ID="SelectButton1" runat="server" CssClass="btn btn-sm mauxanh" Text="CHI TIẾT..." CommandName="Select1" />
                                             </p>
                                         </div>
                                     </div>
@@ -71,7 +76,7 @@
         </div>
 
         <!-- newletter_area_start  -->
-        <div class="newletter_area overlay">
+        <%--<div class="newletter_area overlay">
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-10">
@@ -105,7 +110,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- newletter_area_end  -->
 
         <div class="recent_trip_area">
@@ -120,7 +125,7 @@
                 <div class="row">
 
                     <asp:Panel ID="Panel2" runat="server">
-                        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource2" DataKeyNames="ID_Event" >
+                        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource2" DataKeyNames="ID_Event" OnItemCommand="ListView1_ItemCommand" >
                             <EmptyDataTemplate>
                                 <span>No data was returned.</span>
                             </EmptyDataTemplate>
@@ -128,7 +133,10 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="single_trip">
                                         <div class="thumb">
-                                            <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                            <asp:LinkButton ID="SelectButton1" runat="server" CommandName="Select">
+                                                <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+
+                                            </asp:LinkButton>
                                         </div>
                                         <div class="info">
                                             <div class="date">
@@ -137,7 +145,9 @@
                                             </div>
                                             <a href="/Event.aspx">
                                                 <h3>
-                                                    <asp:Label ID="lblChuDe" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                    <asp:LinkButton ID="SelectButton" runat="server" CommandName="Select">
+                                                        <asp:Label ID="lblChuDe" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                    </asp:LinkButton>
                                                 </h3>
                                                
                                             </a>

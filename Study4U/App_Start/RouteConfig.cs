@@ -13,7 +13,10 @@ namespace Study4U
         {
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
-            routes.EnableFriendlyUrls(settings);
+            routes.EnableFriendlyUrls(settings,
+                                        new IFriendlyUrlResolver[] {
+                                 new MyWebFormsFriendlyUrlResolver() });
+
         }
         public class MyWebFormsFriendlyUrlResolver : WebFormsFriendlyUrlResolver
         {

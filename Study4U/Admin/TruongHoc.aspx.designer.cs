@@ -85,13 +85,40 @@ namespace Study4U.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtHinhAnh;
         
         /// <summary>
+        /// uploadlink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink uploadlink;
+        
+        /// <summary>
+        /// txtHinhAnhBanner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHinhAnhBanner;
+        
+        /// <summary>
+        /// uploadlink2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink uploadlink2;
+        
+        /// <summary>
         /// txtMoTa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMoTa;
+        protected global::CKEditor.NET.CKEditorControl txtMoTa;
         
         /// <summary>
         /// txtNoiDung control.
@@ -100,7 +127,7 @@ namespace Study4U.Admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNoiDung;
+        protected global::CKEditor.NET.CKEditorControl txtNoiDung;
         
         /// <summary>
         /// ddlID_CT control.
@@ -157,13 +184,40 @@ namespace Study4U.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtHinhAnh1;
         
         /// <summary>
+        /// uploadlink1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink uploadlink1;
+        
+        /// <summary>
+        /// txtHinhAnhBanner1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHinhAnhBanner1;
+        
+        /// <summary>
+        /// uploadlink3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink uploadlink3;
+        
+        /// <summary>
         /// txtMoTa1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMoTa1;
+        protected global::CKEditor.NET.CKEditorControl txtMoTa1;
         
         /// <summary>
         /// txtNoiDung1 control.
@@ -172,7 +226,7 @@ namespace Study4U.Admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNoiDung1;
+        protected global::CKEditor.NET.CKEditorControl txtNoiDung1;
         
         /// <summary>
         /// ddlID_CT1 control.
@@ -245,6 +299,42 @@ namespace Study4U.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        
+        /// <summary>
+        /// FileBrowser1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CKFinder.FileBrowser FileBrowser1;
+        
+        /// <summary>
+        /// FileBrowser2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CKFinder.FileBrowser FileBrowser2;
+        
+        /// <summary>
+        /// FileBrowser3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CKFinder.FileBrowser FileBrowser3;
+        
+        /// <summary>
+        /// FileBrowser4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CKFinder.FileBrowser FileBrowser4;
         
         /// <summary>
         /// panelThongBao control.

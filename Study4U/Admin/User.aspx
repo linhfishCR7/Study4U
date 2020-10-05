@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/LayoutAdmin.Master" AutoEventWireup="true" CodeBehind="User.aspx.cs" Inherits="Study4U.Admin.User" %>
+
 <asp:Content ID="Content" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -20,7 +21,7 @@
                         </table>
                         <asp:GridView ID="GridView1" runat="server" Width="100%" HorizontalAlign="Center" OnRowCommand="GridView1_RowCommand"
                             AutoGenerateColumns="False"
-                            DataKeyNames="ID_User" CssClass="table table-striped table-hover table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;" DataSourceID="SqlDataSource1">
+                            DataKeyNames="ID_User" CssClass="table table-striped table-responsive table-hover table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;" DataSourceID="SqlDataSource1">
                             <Columns>
                                 <asp:ButtonField CommandName="editRecord" HeaderText="Edit" ButtonType="Link" Text='<i class="typcn typcn-edit"></i>' ItemStyle-Width="40px">
                                     <ControlStyle CssClass="btn btn-xs mauvang"></ControlStyle>
@@ -187,7 +188,7 @@
         <div>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                 ConnectionString="<%$ ConnectionStrings:Study4UConnectionString %>"
-                SelectCommand="SELECT * FROM [tbl05_User]"
+                SelectCommand="SELECT * FROM [tbl05_User] ORDER BY [ID_User] DESC"
                 DeleteCommand="DELETE FROM [tbl05_User] WHERE [ID_User] = @ID_User"
                 InsertCommand="INSERT INTO [tbl05_User] ([TenUser], [Email], [Password]) VALUES (@TenUser, @Email, @Password)"
                 UpdateCommand="UPDATE [tbl05_User] SET [TenUser] = @TenUser, [Email] = @Email, [Password] = @Password WHERE [ID_User] = @ID_User">

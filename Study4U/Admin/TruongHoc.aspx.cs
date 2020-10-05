@@ -12,7 +12,10 @@ namespace Study4U.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Email"] == null)
+            {
+                Response.Redirect("../Admin/LoginAdmin");
+            }
         }
         //Add Modal
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -32,9 +35,11 @@ namespace Study4U.Admin
             if (IsValid)
             {
                 var parameters = SqlDataSource1.InsertParameters;
-                //([TenTruong], [HinhAnh], [MoTa], [NoiDung], [ID_CT]) 
+                // ([TenTruong], [HinhAnh], [HinhAnhBanner], [MoTa], [NoiDung], [ID_CT])
+
                 parameters["TenTruong"].DefaultValue = txtTenTruong.Text;
                 parameters["HinhAnh"].DefaultValue = txtHinhAnh.Text;
+                parameters["HinhAnhBanner"].DefaultValue = txtHinhAnhBanner.Text;
                 parameters["MoTa"].DefaultValue = txtMoTa.Text;
                 parameters["NoiDung"].DefaultValue = txtNoiDung.Text;
                 parameters["ID_CT"].DefaultValue = ddlID_CT.SelectedValue;
@@ -49,6 +54,10 @@ namespace Study4U.Admin
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
                     }
+                    else if (txtHinhAnhBanner.Text == "")
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
+                    }
                     else if (txtMoTa.Text == "")
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
@@ -58,13 +67,16 @@ namespace Study4U.Admin
                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
                     }
 
+
                     else
                     {
                         SqlDataSource1.Insert();
                         txtTenTruong.Text = "";
                         txtHinhAnh.Text = "";
+                        txtHinhAnhBanner.Text = "";
                         txtMoTa.Text = "";
                         txtNoiDung.Text = "";
+
                         StringBuilder sb = new StringBuilder();
                         sb.Append(@"<script type='text/javascript'>");
                         sb.Append("alert('Record Added Successfully');");
@@ -91,11 +103,10 @@ namespace Study4U.Admin
                 txtID_Truong1.Text = HttpUtility.HtmlDecode(gvrow.Cells[2].Text).ToString();
                 txtTenTruong1.Text = HttpUtility.HtmlDecode(gvrow.Cells[3].Text).ToString().Trim();
                 txtHinhAnh1.Text = HttpUtility.HtmlDecode(gvrow.Cells[4].Text).ToString().Trim();
-                txtMoTa1.Text = HttpUtility.HtmlDecode(gvrow.Cells[5].Text).ToString().Trim();
-                txtNoiDung1.Text = HttpUtility.HtmlDecode(gvrow.Cells[6].Text).ToString().Trim();
-                ddlID_CT1.SelectedValue = HttpUtility.HtmlDecode(gvrow.Cells[7].Text).ToString();
-
-
+                txtHinhAnhBanner1.Text = HttpUtility.HtmlDecode(gvrow.Cells[5].Text).ToString().Trim();
+                txtMoTa1.Text = HttpUtility.HtmlDecode(gvrow.Cells[6].Text).ToString().Trim();
+                txtNoiDung1.Text = HttpUtility.HtmlDecode(gvrow.Cells[7].Text).ToString().Trim();
+                ddlID_CT1.SelectedValue = HttpUtility.HtmlDecode(gvrow.Cells[8].Text).ToString();
 
                 lblResult.Visible = false;
                 StringBuilder sb = new StringBuilder();
@@ -123,10 +134,11 @@ namespace Study4U.Admin
             {
                 var parameters = SqlDataSource1.UpdateParameters;
 
-                //([TenTruong], [HinhAnh], [MoTa], [NoiDung], [ID_CT]) 
+                // ([TenTruong], [HinhAnh], [HinhAnhBanner], [MoTa], [NoiDung], [ID_CT])
                 parameters["ID_Truong"].DefaultValue = txtID_Truong1.Text;
                 parameters["TenTruong"].DefaultValue = txtTenTruong1.Text;
                 parameters["HinhAnh"].DefaultValue = txtHinhAnh1.Text;
+                parameters["HinhAnhBanner"].DefaultValue = txtHinhAnhBanner1.Text;
                 parameters["MoTa"].DefaultValue = txtMoTa1.Text;
                 parameters["NoiDung"].DefaultValue = txtNoiDung1.Text;
                 parameters["ID_CT"].DefaultValue = ddlID_CT1.SelectedValue;
@@ -138,6 +150,10 @@ namespace Study4U.Admin
                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
                     }
                     else if (txtHinhAnh1.Text == "")
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
+                    }
+                    else if (txtHinhAnhBanner1.Text == "")
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
                     }
@@ -201,6 +217,34 @@ namespace Study4U.Admin
             sb.Append("$('#deleteModal').modal('hide');");
             sb.Append(@"</script>");
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "delHideModalScript", sb.ToString(), false);
+        }
+        protected void FileBrowser1_Load(object sender, EventArgs e)
+        {
+            FileBrowser1 = new CKFinder.FileBrowser();
+            FileBrowser1.BasePath = "/ckfinder/";
+            FileBrowser1.SetupCKEditor(txtMoTa);
+        }
+
+        protected void FileBrowser2_Load(object sender, EventArgs e)
+        {
+            FileBrowser1 = new CKFinder.FileBrowser();
+            FileBrowser1.BasePath = "/ckfinder/";
+            FileBrowser1.SetupCKEditor(txtMoTa1);
+
+        }
+        protected void FileBrowser3_Load(object sender, EventArgs e)
+        {
+            FileBrowser1 = new CKFinder.FileBrowser();
+            FileBrowser1.BasePath = "/ckfinder/";
+            FileBrowser1.SetupCKEditor(txtNoiDung);
+        }
+
+        protected void FileBrowser4_Load(object sender, EventArgs e)
+        {
+            FileBrowser1 = new CKFinder.FileBrowser();
+            FileBrowser1.BasePath = "/ckfinder/";
+            FileBrowser1.SetupCKEditor(txtNoiDung1);
+
         }
     }
 }

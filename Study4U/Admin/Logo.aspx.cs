@@ -12,7 +12,10 @@ namespace Study4U.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Email"] == null)
+            {
+                Response.Redirect("../Admin/LoginAdmin");
+            }
         }
         //Add Modal
         protected void btnAdd_Click(object sender, EventArgs e)

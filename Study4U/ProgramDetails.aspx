@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
         <div class="destination_banner_wrap overlay" style="background-image: url(/Content/img/banner/Oxfore.jpg)">
         <div class="destination_text text-center">
-            <h3>Oxfore University</h3>
+            <h3>CHI TIẾT CHƯƠNG TRÌNH</h3>
             <p>Pixel perfect design with awesome contents</p>
         </div>
     </div>
@@ -20,14 +20,20 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-9">
                     <div class="destination_info">
+                         <div class="single_destination">
+                            <h3>CHỦ ĐỀ</h3>
+                            <p>
+                                <%# Eval("ChuDe") %>
+                            </p>
+                        </div>
                         <h3>MÔ TẢ</h3>
                         <p>
                             <%# Eval("MoTa") %>
                         </p>
                         
                         <div class="row justify-content-center">
-                            <div class="col-lg-12 text-center">
-                                <asp:Image ID="Image1" runat="server" CssClass="img-fluid" ImageUrl='<%# Bind("HinhAnh") %>' />
+                            <div class="col-lg-12 text-center" >
+                                <asp:Image ID="Image1" runat="server" style="height:400px; width:100%;" CssClass="img-fluid" ImageUrl='<%# Bind("HinhAnh") %>' />
                             </div>
                         </div>
                         <br />
@@ -62,7 +68,7 @@
                     </div>
                     <div class="bordered_1px"></div>
                     <div class="contact_join">
-                        <h3>Contact for join</h3>
+                        <h3>ĐĂNG KÝ ĐỂ ĐƯỢC TƯ VẤN</h3>
                         <form action="#">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
@@ -82,7 +88,7 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="submit_btn">
-                                        <button class="boxed-btn4" type="submit">submit</button>
+                                        <button class="boxed-btn4" type="submit">GỬI</button>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +115,7 @@
                 </SelectParameters>
             </asp:SqlDataSource>
     <!-- newletter_area_start  -->
-    <div class="newletter_area overlay">
+<%--    <div class="newletter_area overlay">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-10">
@@ -141,7 +147,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
     <!-- newletter_area_end  -->
                 <form runat="server">
 
@@ -163,15 +169,20 @@
                                 <div class="col-lg-4 col-md-4">
                                     <div class="single_place">
                                         <div class="thumb">
-                                            <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                            <asp:LinkButton ID="SelectButton3" runat="server" CommandName="Select1">
+                                                <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                            </asp:LinkButton>
                                         </div>
                                         <div class="place_info">
                                             <a href="#">
-                                                <h3><%# Eval("TenTruong") %></h3>
+                                                <h3>
+                                                     <asp:LinkButton ID="SelectButton2" runat="server" CommandName="Select1">
+                                                        <asp:Label ID="lblTenTruong" runat="server" Text='<%# Eval("TenTruong") %>' /></asp:LinkButton>
+                                                </h3>
                                             </a>
                                             <p><%# Eval("MoTa") %></p>
                                               <p>
-                                                <asp:Button ID="SelectButton1" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select1" />
+                                                <asp:Button ID="SelectButton1" runat="server" CssClass="btn btn-sm mauxanh" Text="CHI TIẾT..." CommandName="Select1" />
                                             </p>
                                         </div>
                                     </div>

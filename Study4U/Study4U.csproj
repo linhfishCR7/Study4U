@@ -47,11 +47,13 @@
       <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CKEditor.NET">
+    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\PMCDB\PMCDB\bin\CKEditor.NET.dll</HintPath>
     </Reference>
-    <Reference Include="CKFinder">
-      <HintPath>..\..\..\..\..\..\Code for Turorial\Temples\ckfinder\bin\Debug\CKFinder.dll</HintPath>
+    <Reference Include="CKFinder, Version=2.6.0.2792, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ckfinder\bin\Debug\CKFinder.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
@@ -196,8 +198,11 @@
     <Content Include="Admin\Calendar.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Event.aspx" />
+    <Content Include="Admin\LoginAdmin.aspx" />
     <Content Include="Admin\Logo.aspx" />
     <Content Include="Admin\Memory.aspx" />
+    <Content Include="Admin\Program.aspx" />
+    <Content Include="Admin\ProgramDetail.aspx" />
     <Content Include="Admin\QuocGia.aspx" />
     <Content Include="Admin\TruongHoc.aspx" />
     <Content Include="Admin\Upload.aspx" />
@@ -290,6 +295,7 @@
     <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
     <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
     <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\en-au.js" />
     <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
     <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
     <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
@@ -346,7 +352,9 @@
     <Content Include="ckeditor\plugins\about\dialogs\about.js" />
     <Content Include="ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
     <Content Include="ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="ckeditor\plugins\clipboard\dialogs\paste.js" />
     <Content Include="ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="ckeditor\plugins\dialog\styles\dialog.css" />
     <Content Include="ckeditor\plugins\icons.png" />
     <Content Include="ckeditor\plugins\icons_hidpi.png" />
     <Content Include="ckeditor\plugins\image\dialogs\image.js" />
@@ -359,7 +367,10 @@
     <Content Include="ckeditor\plugins\magicline\images\hidpi\icon.png" />
     <Content Include="ckeditor\plugins\magicline\images\icon-rtl.png" />
     <Content Include="ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="ckeditor\plugins\pastefromgdocs\filter\default.js" />
     <Content Include="ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="ckeditor\plugins\pastetools\filter\common.js" />
+    <Content Include="ckeditor\plugins\pastetools\filter\image.js" />
     <Content Include="ckeditor\plugins\scayt\dialogs\dialog.css" />
     <Content Include="ckeditor\plugins\scayt\dialogs\options.js" />
     <Content Include="ckeditor\plugins\scayt\dialogs\toolbar.css" />
@@ -407,11 +418,14 @@
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ro.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\si.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sr-latn.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sr.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\th.js" />
     <Content Include="ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
@@ -426,6 +440,7 @@
     <Content Include="ckeditor\plugins\tableselection\styles\tableselection.css" />
     <Content Include="ckeditor\plugins\tabletools\dialogs\tableCell.js" />
     <Content Include="ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="ckeditor\plugins\widget\images\handle.png" />
     <Content Include="ckeditor\plugins\wsc\dialogs\ciframe.html" />
     <Content Include="ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
     <Content Include="ckeditor\plugins\wsc\dialogs\wsc.css" />
@@ -437,6 +452,7 @@
     <Content Include="ckeditor\samples\img\header-bg.png" />
     <Content Include="ckeditor\samples\img\header-separator.png" />
     <Content Include="ckeditor\samples\img\logo.png" />
+    <Content Include="ckeditor\samples\img\logo.svg" />
     <Content Include="ckeditor\samples\img\navigation-tip.png" />
     <Content Include="ckeditor\samples\index.html" />
     <Content Include="ckeditor\samples\js\sample.js" />
@@ -510,6 +526,7 @@
     <Content Include="ckeditor\skins\moono-lisa\images\refresh.png" />
     <Content Include="ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="ckeditor\styles.js" />
+    <Content Include="ckeditor\vendor\promise.js" />
     <Content Include="ckfinder\bin\Debug\CKFinder.dll" />
     <Content Include="ckfinder\bin\Debug\CKFinder.pdb" />
     <Content Include="ckfinder\bin\Debug\CKFinder_FileEditor.dll" />
@@ -1163,6 +1180,31 @@
     <Content Include="Content\add\js\bootstrap.js" />
     <Content Include="Content\add\js\bootstrap.min.js" />
     <Content Include="Content\add\js\npm.js" />
+    <Content Include="Admin\LayoutAdmin.Master" />
+    <Content Include="ckfinder\plugins\fileeditor\codemirror\LICENSE" />
+    <Content Include="ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="ckfinder\userfiles\.htaccess" />
+    <Content Include="ckeditor\CHANGES.md" />
+    <Content Include="ckeditor\LICENSE.md" />
+    <Content Include="ckeditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="ckeditor\plugins\scayt\README.md" />
+    <Content Include="ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="ckeditor\plugins\wsc\README.md" />
+    <Content Include="ckeditor\README.md" />
+    <Content Include="ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Admin\Login.Master" />
     <None Include="Content\add\Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Content\add\Scripts\jquery-3.3.1.js" />
     <Content Include="Content\add\Scripts\jquery-3.3.1.min.js" />
@@ -1181,18 +1223,12 @@
     <Content Include="Content\Admin\assets\fonts\themify.svg" />
     <Content Include="Content\Admin\assets\fonts\typicons.svg" />
     <Content Include="Content\Admin\assets\fonts\weathericons-regular-webfont.svg" />
-    <Content Include="Content\Admin\assets\images\big\img-1.jpg" />
-    <Content Include="Content\Admin\assets\images\big\img-2.jpg" />
-    <Content Include="Content\Admin\assets\images\big\img-3.jpg" />
     <Content Include="Content\Admin\assets\images\favicon.ico" />
     <Content Include="Content\Admin\assets\images\flags\germany.jpg" />
     <Content Include="Content\Admin\assets\images\flags\italy.jpg" />
     <Content Include="Content\Admin\assets\images\flags\russia.jpg" />
     <Content Include="Content\Admin\assets\images\flags\spain.jpg" />
     <Content Include="Content\Admin\assets\images\flags\us.jpg" />
-    <Content Include="Content\Admin\assets\images\layouts\dark.png" />
-    <Content Include="Content\Admin\assets\images\layouts\light.png" />
-    <Content Include="Content\Admin\assets\images\layouts\rtl.png" />
     <Content Include="Content\Admin\assets\images\logo-light.png" />
     <Content Include="Content\Admin\assets\images\logo-sm-light.png" />
     <Content Include="Content\Admin\assets\images\logo-sm.png" />
@@ -1201,18 +1237,6 @@
     <Content Include="Content\Admin\assets\images\plugins\jstree.png" />
     <Content Include="Content\Admin\assets\images\plugins\loading.gif" />
     <Content Include="Content\Admin\assets\images\plugins\multiple-arrow.png" />
-    <Content Include="Content\Admin\assets\images\small\img-1.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-10.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-11.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-12.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-2.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-3.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-4.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-5.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-6.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-7.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-8.jpg" />
-    <Content Include="Content\Admin\assets\images\small\img-9.jpg" />
     <Content Include="Content\Admin\assets\images\users\avatar-1.jpg" />
     <Content Include="Content\Admin\assets\images\users\avatar-10.jpg" />
     <Content Include="Content\Admin\assets\images\users\avatar-2.jpg" />
@@ -1346,7 +1370,23 @@
     <Content Include="Content\Admin\assets\libs\toastr\toastr.min.js" />
     <Content Include="Content\Admin\assets\libs\x-editable\bootstrap-editable.css" />
     <Content Include="Content\Admin\assets\libs\x-editable\bootstrap-editable.min.js" />
+    <Content Include="Content\img\banner\Cambridge1.png" />
+    <Content Include="Content\img\banner\girl.png" />
+    <Content Include="Content\img\banner\library1.png" />
+    <Content Include="Content\img\banner\Oxfore1.png" />
+    <Content Include="Content\img\banner\Princeton.jpg" />
+    <Content Include="Content\img\banner\Princeton1.png" />
+    <Content Include="Content\img\destination\CanadaMoTa.jpg" />
+    <Content Include="Content\img\destination\UcMoTa.jpg" />
     <Content Include="Content\img\destination\USA.jpg" />
+    <Content Include="Content\img\destination\USAMoTa.jpg" />
+    <Content Include="Content\img\place\CambrigdeBanner.jpg" />
+    <Content Include="Content\img\place\ChicagoBanner.jpg" />
+    <Content Include="Content\img\place\HarvardBanner.jpg" />
+    <Content Include="Content\img\place\OxforeBanner.jpg" />
+    <Content Include="Content\img\place\san-jose-stateBanner.jpg" />
+    <Content Include="Content\img\place\StanfordBanner.jpg" />
+    <Content Include="Email.aspx" />
     <Content Include="Event.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -1375,82 +1415,23 @@
     <Content Include="Content\fonts\themify.svg" />
     <Content Include="Content\img\about\1.png" />
     <Content Include="Content\img\about\2.png" />
-    <Content Include="Content\img\about\cambridge-89754_1280.jpg" />
-    <Content Include="Content\img\about\university-of-chicago-4164784_1280.jpg" />
-    <Content Include="Content\img\about\university-of-chicago-4164784_1920.jpg" />
-    <Content Include="Content\img\banner\banner.png" />
-    <Content Include="Content\img\banner\banner2.png" />
-    <Content Include="Content\img\banner\banner3.png" />
-    <Content Include="Content\img\banner\bradcam.png" />
-    <Content Include="Content\img\banner\bradcam2.png" />
-    <Content Include="Content\img\banner\bradcam3.png" />
-    <Content Include="Content\img\banner\bradcam4.png" />
     <Content Include="Content\img\banner\Cambridge.jpg" />
-    <Content Include="Content\img\banner\destination.png" />
-    <Content Include="Content\img\banner\girl.jpg" />
     <Content Include="Content\img\banner\library.png" />
-    <Content Include="Content\img\banner\newsletter.png" />
     <Content Include="Content\img\banner\oxford-university-m-e1417728349560-1600x587.jpg" />
     <Content Include="Content\img\banner\Oxfore.jpg" />
-    <Content Include="Content\img\banner\Princeton.jpg" />
     <Content Include="Content\img\banner\reading.jpg" />
     <Content Include="Content\img\banner\testmonial.png" />
     <Content Include="Content\img\banner\video.png" />
-    <Content Include="Content\img\blog\author.png" />
-    <Content Include="Content\img\blog\bg_1.jpg" />
-    <Content Include="Content\img\blog\bg_2.jpg" />
-    <Content Include="Content\img\blog\bg_3.jpg" />
-    <Content Include="Content\img\blog\bg_5.jpg" />
-    <Content Include="Content\img\blog\blog_1.png" />
-    <Content Include="Content\img\blog\blog_2.png" />
-    <Content Include="Content\img\blog\blog_3.png" />
-    <Content Include="Content\img\blog\blog_4.png" />
-    <Content Include="Content\img\blog\course-1.jpg" />
-    <Content Include="Content\img\blog\course-2.jpg" />
-    <Content Include="Content\img\blog\course-3.jpg" />
-    <Content Include="Content\img\blog\course-4.jpg" />
-    <Content Include="Content\img\blog\course-5.jpg" />
-    <Content Include="Content\img\blog\course-6.jpg" />
-    <Content Include="Content\img\blog\course-7.jpg" />
-    <Content Include="Content\img\blog\course-8.jpg" />
-    <Content Include="Content\img\blog\learn_about_bg.png" />
     <Content Include="Content\img\blog\single_blog_1.png" />
     <Content Include="Content\img\blog\single_blog_2.png" />
     <Content Include="Content\img\blog\single_blog_3.png" />
     <Content Include="Content\img\blog\single_blog_4.png" />
     <Content Include="Content\img\blog\single_blog_5.png" />
-    <Content Include="Content\img\blog\slide_thumb_1.png" />
-    <Content Include="Content\img\comment\comment_1.png" />
-    <Content Include="Content\img\comment\comment_2.png" />
-    <Content Include="Content\img\comment\comment_3.png" />
-    <Content Include="Content\img\creative_mind\1.png" />
-    <Content Include="Content\img\destination\1.png" />
-    <Content Include="Content\img\destination\2.png" />
-    <Content Include="Content\img\destination\3.png" />
-    <Content Include="Content\img\destination\4.png" />
-    <Content Include="Content\img\destination\5.png" />
-    <Content Include="Content\img\destination\6.png" />
     <Content Include="Content\img\destination\Canada.jpg" />
     <Content Include="Content\img\destination\France.jpg" />
     <Content Include="Content\img\destination\Italy.jpg" />
     <Content Include="Content\img\destination\Russia.jpg" />
-    <Content Include="Content\img\destination\Singapore.jpg" />
-    <Content Include="Content\img\details-img\1.png" />
-    <Content Include="Content\img\details-img\2.png" />
-    <Content Include="Content\img\details-img\details_banner.png" />
-    <Content Include="Content\img\elements\a.jpg" />
-    <Content Include="Content\img\elements\a2.jpg" />
-    <Content Include="Content\img\elements\d.jpg" />
-    <Content Include="Content\img\elements\disabled-check.png" />
-    <Content Include="Content\img\elements\disabled-radio.png" />
-    <Content Include="Content\img\elements\f1.jpg" />
-    <Content Include="Content\img\elements\f2.jpg" />
-    <Content Include="Content\img\elements\f3.jpg" />
-    <Content Include="Content\img\elements\f4.jpg" />
-    <Content Include="Content\img\elements\f5.jpg" />
-    <Content Include="Content\img\elements\f6.jpg" />
-    <Content Include="Content\img\elements\f7.jpg" />
-    <Content Include="Content\img\elements\f8.jpg" />
+    <Content Include="Content\img\destination\Uc.jpg" />
     <Content Include="Content\img\elements\g1.jpg" />
     <Content Include="Content\img\elements\g2.jpg" />
     <Content Include="Content\img\elements\g3.jpg" />
@@ -1459,19 +1440,9 @@
     <Content Include="Content\img\elements\g6.jpg" />
     <Content Include="Content\img\elements\g7.jpg" />
     <Content Include="Content\img\elements\g8.jpg" />
-    <Content Include="Content\img\elements\primary-check.png" />
-    <Content Include="Content\img\elements\primary-radio.png" />
-    <Content Include="Content\img\elements\success-check.png" />
-    <Content Include="Content\img\elements\success-radio.png" />
     <Content Include="Content\img\favicon.png" />
     <Content Include="Content\img\footer_logo.png" />
     <Content Include="Content\img\icohat.png" />
-    <Content Include="Content\img\instagram\1.png" />
-    <Content Include="Content\img\instagram\2.png" />
-    <Content Include="Content\img\instagram\3.png" />
-    <Content Include="Content\img\instagram\4.png" />
-    <Content Include="Content\img\instagram\5.png" />
-    <Content Include="Content\img\instagram\6.png" />
     <Content Include="Content\img\instagram\image_1.jpg" />
     <Content Include="Content\img\instagram\image_2.jpg" />
     <Content Include="Content\img\instagram\image_3.jpg" />
@@ -1480,49 +1451,14 @@
     <Content Include="Content\img\instagram\image_6.jpg" />
     <Content Include="Content\img\logo.ico" />
     <Content Include="Content\img\logo.jpg" />
-    <Content Include="Content\img\place\1.png" />
-    <Content Include="Content\img\place\2.png" />
-    <Content Include="Content\img\place\3.png" />
-    <Content Include="Content\img\place\4.png" />
-    <Content Include="Content\img\place\5.png" />
-    <Content Include="Content\img\place\6.png" />
     <Content Include="Content\img\place\cambridge.jpg" />
     <Content Include="Content\img\place\columbia.jpg" />
-    <Content Include="Content\img\place\h1.jpg" />
-    <Content Include="Content\img\place\h2.jpg" />
-    <Content Include="Content\img\place\h3.jpg" />
-    <Content Include="Content\img\place\h4.jpg" />
-    <Content Include="Content\img\place\h5.jpg" />
-    <Content Include="Content\img\place\h6.jpg" />
-    <Content Include="Content\img\place\h7.jpg" />
-    <Content Include="Content\img\place\h8.jpg" />
     <Content Include="Content\img\place\harvard.jpg" />
     <Content Include="Content\img\place\oxford.jpg" />
     <Content Include="Content\img\place\san-jose-state.jpg" />
     <Content Include="Content\img\place\stanford.jpg" />
     <Content Include="Content\img\place\university-of-chicago.jpg" />
     <Content Include="Content\img\place\yale.jpg" />
-    <Content Include="Content\img\post\next.png" />
-    <Content Include="Content\img\post\post_1.png" />
-    <Content Include="Content\img\post\post_10.png" />
-    <Content Include="Content\img\post\post_2.png" />
-    <Content Include="Content\img\post\post_3.png" />
-    <Content Include="Content\img\post\post_4.png" />
-    <Content Include="Content\img\post\post_5.png" />
-    <Content Include="Content\img\post\post_6.png" />
-    <Content Include="Content\img\post\post_7.png" />
-    <Content Include="Content\img\post\post_8.png" />
-    <Content Include="Content\img\post\post_9.png" />
-    <Content Include="Content\img\post\preview.png" />
-    <Content Include="Content\img\prise\1.png" />
-    <Content Include="Content\img\prise\2.png" />
-    <Content Include="Content\img\prise\3.png" />
-    <Content Include="Content\img\property\1.png" />
-    <Content Include="Content\img\property\2.png" />
-    <Content Include="Content\img\property\3.png" />
-    <Content Include="Content\img\property\4.png" />
-    <Content Include="Content\img\property\5.png" />
-    <Content Include="Content\img\property\6.png" />
     <Content Include="Content\img\SchoolLogo\0_r8BR-G.jpg" />
     <Content Include="Content\img\SchoolLogo\119781.jpg" />
     <Content Include="Content\img\SchoolLogo\151659238692.jpg" />
@@ -1579,7 +1515,6 @@
     <Content Include="Content\img\SchoolLogo\viu_1.jpg" />
     <Content Include="Content\img\SchoolLogo\WID_open-graph.png" />
     <Content Include="Content\img\SchoolLogo\Đại-học-ADELPHI.jpg" />
-    <Content Include="Content\img\service\about.png" />
     <Content Include="Content\img\STUDY4U.jpg" />
     <Content Include="Content\img\subduhoc\00.jpg" />
     <Content Include="Content\img\subduhoc\00_m.jpg" />
@@ -1591,17 +1526,10 @@
     <Content Include="Content\img\svg_icon\boy-1300242.svg" />
     <Content Include="Content\img\svg_icon\boy-34619.svg" />
     <Content Include="Content\img\svg_icon\quote.svg" />
-    <Content Include="Content\img\team\1.png" />
-    <Content Include="Content\img\team\2.png" />
-    <Content Include="Content\img\team\3.png" />
     <Content Include="Content\img\testmonial\author.png" />
     <Content Include="Content\img\trip\1.png" />
     <Content Include="Content\img\trip\2.png" />
     <Content Include="Content\img\trip\3.png" />
-    <Content Include="Content\img\works\1.png" />
-    <Content Include="Content\img\works\2.png" />
-    <Content Include="Content\img\works\3.png" />
-    <Content Include="Content\img\works\4.png" />
     <Content Include="Content\js\ajax-form.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\contact.js" />
@@ -1751,36 +1679,13 @@
     <Content Include="Content\Admin\assets\fonts\weathericons-regular-webfont-3.bin" />
     <Content Include="Content\Admin\assets\fonts\weathericons-regular-webfont-4.bin" />
     <Content Include="Content\Admin\assets\fonts\weathericons-regular-webfont.bin" />
-    <Content Include="Admin\LayoutAdmin.Master" />
-    <Content Include="ckeditor\CHANGES.md" />
-    <Content Include="ckeditor\LICENSE.md" />
-    <Content Include="ckeditor\plugins\scayt\CHANGELOG.md" />
-    <Content Include="ckeditor\plugins\scayt\LICENSE.md" />
-    <Content Include="ckeditor\plugins\scayt\README.md" />
-    <Content Include="ckeditor\plugins\wsc\LICENSE.md" />
-    <Content Include="ckeditor\plugins\wsc\README.md" />
-    <Content Include="ckeditor\README.md" />
-    <Content Include="ckeditor\samples\old\assets\posteddata.php" />
-    <Content Include="ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
-    <Content Include="ckeditor\samples\old\sample_posteddata.php" />
-    <Content Include="ckeditor\samples\toolbarconfigurator\font\config.json" />
-    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
-    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
-    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
-    <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
-    <Content Include="ckeditor\skins\moono-lisa\readme.md" />
-    <Content Include="ckfinder\plugins\fileeditor\codemirror\LICENSE" />
-    <Content Include="ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="ckfinder\userfiles\.htaccess" />
     <Content Include="Content\add\css\bootstrap-theme.css.map" />
     <Content Include="Content\add\css\bootstrap-theme.min.css.map" />
     <Content Include="Content\add\css\bootstrap.css.map" />
     <Content Include="Content\add\css\bootstrap.min.css.map" />
     <Content Include="Content\add\Scripts\jquery-3.3.1.min.map" />
     <Content Include="Content\add\Scripts\jquery-3.3.1.slim.min.map" />
+    <None Include="Properties\PublishProfiles\Study4U.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="memory.aspx" />
     <Content Include="Program.aspx" />
@@ -1833,6 +1738,8 @@
     <Content Include="Templates\images\08.png" />
     <Content Include="Templates\images\09.png" />
     <Content Include="Templates\images\11.png" />
+    <Content Include="Templates\images\ndh%281%29.jpg" />
+    <Content Include="Templates\images\ndh.jpg" />
     <Content Include="Templates\_thumbs\Images\01.png" />
     <Content Include="Templates\_thumbs\Images\02.png" />
     <Content Include="Templates\_thumbs\Images\03.png" />
@@ -1843,6 +1750,8 @@
     <Content Include="Templates\_thumbs\Images\08.png" />
     <Content Include="Templates\_thumbs\Images\09.png" />
     <Content Include="Templates\_thumbs\Images\11.png" />
+    <Content Include="Templates\_thumbs\Images\ndh%281%29.jpg" />
+    <Content Include="Templates\_thumbs\Images\ndh.jpg" />
     <Content Include="University.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -1895,6 +1804,20 @@
     <Compile Include="Admin\LayoutAdmin.Master.designer.cs">
       <DependentUpon>LayoutAdmin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Logo.aspx.cs">
       <DependentUpon>Logo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1908,6 +1831,20 @@
     </Compile>
     <Compile Include="Admin\Memory.aspx.designer.cs">
       <DependentUpon>Memory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Program.aspx.cs">
+      <DependentUpon>Program.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Program.aspx.designer.cs">
+      <DependentUpon>Program.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProgramDetail.aspx.cs">
+      <DependentUpon>ProgramDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProgramDetail.aspx.designer.cs">
+      <DependentUpon>ProgramDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\QuocGia.aspx.cs">
       <DependentUpon>QuocGia.aspx</DependentUpon>
@@ -1944,6 +1881,13 @@
     </Compile>
     <Compile Include="ChiTietTruong.aspx.designer.cs">
       <DependentUpon>ChiTietTruong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Email.aspx.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Email.aspx.designer.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
     </Compile>
     <Compile Include="Event.aspx.cs">
       <DependentUpon>Event.aspx</DependentUpon>
@@ -2044,8 +1988,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ckfinder\userfiles\images\" />
     <Folder Include="Templates\flash\" />
     <Folder Include="Templates\_thumbs\Files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

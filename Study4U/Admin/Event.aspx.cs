@@ -1,5 +1,4 @@
-﻿using CKFinder;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +12,10 @@ namespace Study4U.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Email"] == null)
+            {
+                Response.Redirect("../Admin/LoginAdmin");
+            }
         }
         //Add Modal
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -54,18 +56,18 @@ namespace Study4U.Admin
                         ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
                     }
 
-                    else if (txtNgayDang.Text == "")
-                    {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
-                    }
-                    else if (txtNgayBatDau.Text == "")
-                    {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
-                    }
-                    else if (txtNgayKetThuc.Text == "")
-                    {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
-                    }
+                    //else if (txtNgayDang.Text == "")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
+                    //}
+                    //else if (txtNgayBatDau.Text == "")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
+                    //}
+                    //else if (txtNgayKetThuc.Text == "")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Các trường (*) không được bỏ trống.');", true);
+                    //}
 
                     else
                     {

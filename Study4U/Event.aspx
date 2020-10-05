@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text text-center">
-                        <h3>Event</h3>
+                        <h3>SỰ KIỆN</h3>
                         <p>Pixel perfect design with awesome contents</p>
                     </div>
                 </div>
@@ -42,12 +42,14 @@
                                     <ItemTemplate>
                                         <article class="blog_item">
                                             <div class="blog_item_img">
-                                                <a href="/LoginSystem">
-                                                    <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                                <a>
+                                                    <asp:LinkButton ID="LinkButton3" runat="server" CommandName="Select">
+                                                        <asp:Image ID="Image2" CssClass="card-img rounded-0" runat="server" ImageUrl='<%# Bind("HinhAnh") %>' />
 
+                                                    </asp:LinkButton>
                                                 </a>
 
-                                                <a href="#" class="blog_item_date">
+                                                <a class="blog_item_date">
                                                     <h3>
                                                         <%#Eval("NgayDang","{0:dd}")%>  
 
@@ -59,14 +61,16 @@
                                             <div class="blog_details">
                                                 <a class="d-inline-block" href="#">
                                                     <h2>
-                                                        <asp:Label ID="lblChuDe" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Select">
+                                                            <asp:Label ID="lblChuDe" runat="server" Text='<%# Eval("ChuDe") %>' />
+                                                        </asp:LinkButton>
                                                     </h2>
                                                 </a>
                                                 <p>
                                                     <asp:Label ID="Label3" runat="server" Text='<%# Eval("MoTa") %>' />
                                                 </p>
                                                 <p>
-                                                    <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select" />
+                                                    <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxanh" Text="CHI TIẾT..." CommandName="Select" />
                                                 </p>
                                             </div>
                                         </article>
@@ -122,7 +126,7 @@
 
 
                         <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title">Recent Post</h3>
+                            <h3 class="widget_title">SỰ KIỆN GẦN ĐÂY</h3>
                             <asp:Panel ID="Panel2" runat="server">
                                 <asp:ListView ID="ListView2" runat="server" DataSourceID="SqlDataSource2" DataKeyNames="ID_Event" OnItemCommand="ListView2_ItemCommand">
                                     <EmptyDataTemplate>
@@ -130,15 +134,17 @@
                                     </EmptyDataTemplate>
                                     <ItemTemplate>
                                         <div class="media post_item">
-                                            <a href="/LoginSystem">
-                                                <asp:Image ID="Image2" runat="server" Style="width: 80px; height: 80px;" ImageUrl='<%# Bind("HinhAnh") %>' />
-
+                                            <a>
+                                                <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Select">
+                                                    <asp:Image ID="Image2" runat="server" Style="width: 80px; height: 80px;" ImageUrl='<%# Bind("HinhAnh") %>' />
+                                                </asp:LinkButton>
                                             </a>
                                             <div class="media-body">
-                                                    <h3>
-                                                        <asp:Label ID="lblChuDe" runat="server" Text='<%# Eval("ChuDe") %>' />
-                                                        <asp:Button ID="SelectButton" runat="server" CssClass="btn btn-sm mauxam" Text="View more..." CommandName="Select" />
-                                                    </h3>
+                                                <h3>
+                                                    <asp:LinkButton ID="SelectButton" runat="server" CommandName="Select">
+                                                        <asp:Label ID="lblChuDe" runat="server" Text='<%# Eval("ChuDe") %>' /></asp:LinkButton>
+
+                                                </h3>
                                                 <p><%#Eval("NgayDang","{0:MMM dd, yyyy}")%>  </p>
                                             </div>
                                         </div>
